@@ -1,0 +1,13 @@
+<div  routerLink="/details/{{data.id}}">
+<img src="{{ data.image }}" class="card-img-top" alt="...">
+</div>
+      <div class="card-body">
+        <h5 class="card-title">{{ data.title }}</h5>
+        <p class="card-text opacity-75">{{ data.description }}</p>
+        <h5>{{ data.price|currency }}</h5>
+        <button class="btn btn-dark " *ngIf="!addButton" (click)="addButton=true">Add to cart</button>
+        <div class="d-flex w-50 gap-2" *ngIf="addButton">
+          <input type="number" class="form-control" [(ngModel)]="amount">
+          <button class="btn btn-outline-danger " (click)="add();addButton=false">Add</button>
+        </div>
+      </div>

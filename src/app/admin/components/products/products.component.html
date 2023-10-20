@@ -1,0 +1,11 @@
+  <img src="{{ data.image }}" class="card-img-top" alt="...">
+  
+        <div class="card-body">
+          <h5 class="card-title">{{ data.title }}</h5>
+          <p class="card-text opacity-75">{{ data.description }}</p>
+          <h5>{{ data.price|currency }}</h5>
+          <div class="d-flex w-50 gap-2" >
+            <button class="btn btn-outline-success " routerLink="/edit/{{data.id}}">Edit</button>
+            <button type="submit" class="btn btn-outline-danger " (click)="deleteProduct()">delete Product</button>
+          </div>
+        </div>
